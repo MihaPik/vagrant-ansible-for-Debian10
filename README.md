@@ -1,4 +1,4 @@
-# vagrant-ansible fo Debian 10
+# vagrant-ansible for Debian 10
 VM with apache2:8888 &amp;&amp; nginx:80
 
 Using the Vagrantfile, the VM is deployed with the following parameters:
