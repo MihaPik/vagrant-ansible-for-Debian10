@@ -8,6 +8,7 @@ CPU - 2 / RAM - 2 GB / HDD - 10 GB () / OS - Debian 10
 (the minimum disk size created was 20 GB, I assume that it depends on the image box, I also found information that the config.disksize.size plugin allows you to create at least 10 GB)
 
 ###########################################################################
+
 Using ansible_local (playbook.yml) the following actions are performed:
  installing: vim
               wget
