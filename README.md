@@ -17,4 +17,5 @@ Using ansible_local (playbook.yml) the following actions are performed:
               apache2:8888
               nginx:80
 helloworld.php - php file with text "Hello World!"
+
 upgradephp56tophp72.yml - upgrades php5.6 to php7.2 with changing modules and restarting nginx and apache2
