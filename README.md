@@ -9,7 +9,7 @@ CPU - 2 / RAM - 2 GB / HDD - 10 GB () / OS - Debian 10
 
 ###########################################################################
 Using ansible_local (playbook.yml) the following actions are performed:
-- installing: vim
+ installing: vim
               wget
               htop
               tmux
