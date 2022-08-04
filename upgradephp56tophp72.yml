@@ -1,0 +1,17 @@
+- hosts: all
+  sudo: yes
+  tasks: 
+   - name: update php56 to php72
+     apt:
+      name: 
+         - php7.2
+      update_cache: true
+     become: yes
+   - name: disable module php56
+     shell:  a2dismod php5.6
+   - name: enable module php72
+     shell: a2enmod php7.2
+   - name: restart apache2
+     service: name=apache2 state=restarted
+   - name: restart nginx
+     service: name=nginx state=restarted

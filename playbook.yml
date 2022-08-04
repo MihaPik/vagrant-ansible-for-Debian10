@@ -1,0 +1,39 @@
+- hosts: all
+  sudo: yes
+  tasks: 
+   - name: vim wget htop tmux apache2 are installed
+     apt:
+      name: 
+         - vim
+         - wget
+         - htop
+         - tmux
+         - apache2
+      state: present
+      update_cache: true
+     become: yes
+   - name: change apache2 port
+     shell:  echo "Listen 8888" > /etc/apache2/ports.conf
+   - name: restart apache2
+     service: name=apache2 state=restarted
+   - name: install nginx
+     apt:
+      name:
+         - nginx
+   - name: install packeges for php
+     apt:
+      name:
+         - apt-transport-https
+         - lsb-release
+         - ca-certificates
+   - name: install certificated for php
+     shell: wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+   - name: add repo for php
+     shell: sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+   - name: php56 are installed
+     apt:
+      name: 
+         - php5.6 
+      state: present
+      update_cache: true
+     become: yes
